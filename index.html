@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
+    <title>Plan de Propuestas - Candidatura I CODE CEIS</title>
+    <style>
+        .bonheur-royale-regular {
+            font-family: "Bonheur Royale", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #f0f0f0;
+            background-color: #1a1a1a;
+            max-width: 100%; /* Cambiado a 100% para mejor responsividad */
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #f0f0f0;
+            background-color: #1a1a1a;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #2c2c2c;
+            color: #ebd768;
+            text-align: center;
+            padding: 1em;
+            margin-bottom: 1em;
+            border-bottom: 3px solid #ffd700;
+        }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1em;
+        }
+        .logo {
+            max-width: 200px;
+            max-height: 200px;
+        }
+        h1, h2 {
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 0.3em;
+            font-family: "Charm", cursive;
+            font-weight: 500;
+            font-style: normal;
+            margin: auto;
+            background: linear-gradient(to bottom, #b19f3e, #eee093, #b19f3e);
+            -webkit-background-clip: text; /* Clip del fondo para el texto en WebKit */
+            -webkit-text-fill-color: transparent; /* Relleno del texto transparente para mostrar el gradiente */
+        }
+
+        h3{
+            font-family: "Bonheur Royale", cursive;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 40px;
+            margin: auto;
+            background: linear-gradient(to bottom, #b19f3e, #eee093, #b19f3e);
+            -webkit-background-clip: text; /* Clip del fondo para el texto en WebKit */
+            -webkit-text-fill-color: transparent; /* Relleno del texto transparente para mostrar el gradiente */
+        }
+        .cargo{
+            font-family: "Charm", cursive;
+            font-weight: 500;
+            font-style: normal;
+            color: #eee3a7;
+            font-size: 24px;
+        }
+        .proposal {
+            background-color: #2c2c2c;
+            border: 1px solid #ffd700;
+            border-radius: 5px;
+            padding: 1em;
+            margin-bottom: 2em;
+        }
+        .proposal-content {
+            display: none;
+        }
+        .show-more {
+            background-color: #e9d878;
+            color: #1a1a1a;
+            border: none;
+            padding: 0.85em 1em;
+            cursor: pointer;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .show-more:hover {
+            background-color: #e6c200;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            /* border: 2px solid #ffd700; */
+        }
+        footer {
+            text-align: center;
+            margin-top: 2em;
+            padding-top: 1em;
+            border-top: 2px solid #ffd700;
+            color: #f0d959;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 2em;
+            overflow: hidden;
+            /* background-image: url("./resource/img/LOGO\ ICODE\ v2\ dorado.png"); */
+            background-size: cover; /* O usa 'contain' según lo que necesites */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-position: center; 
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            min-width: 100%;
+            text-align: center;
+            height: 675px;
+            
+        }
+        .carousel-item img {
+            width: auto; /* Ajustado a 100% para responsividad */
+            height: 526px;
+            object-fit: cover;
+            border-radius: 10px; /* Cambiado para un estilo más moderno */
+            margin-bottom: 1em;
+            filter: drop-shadow(4px 4px 10px #f1e28d40); 
+        }
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #a19c7d60;
+            color: #1a1a1a;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+        }
+        .carousel-control:hover{
+            background-color: #f1e28d;
+            background-color: #cab95a;
+        }
+        .carousel-control.prev { left: 10px; }
+        .carousel-control.next { right: 10px; }
+
+        .carousel-indicators {
+            text-align: center;
+            margin-top: 10px;
+            position: absolute; /* Posición absoluta para colocar los indicadores */
+            bottom: 41px; /* Ajusta la distancia desde la parte inferior */
+            left: 50%; /* Centra los indicadores horizontalmente */
+            transform: translateX(-50%); /* Ajusta el centro */
+            z-index: 10; /* Asegúrate de que esté por encima de las imágenes */
+            text-align: center;
+        }
+
+        .indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background-color: #ffffff71;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background-color: #ffd700; /* Color de la bolita activa */
+        }
+        .container_equipo {
+            display: flex; /* Utiliza Flexbox para alinear los elementos en línea */
+            justify-content: space-between; /* Centra los elementos horizontalmente */
+            align-items: center; /* Centra los elementos verticalmente */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Plan de Propuestas de ICODE</h1>
+        <p>Innovación, Creatividad, Orden y Desarrollo Estudiantil (I CODE)</p>
+    </header>
+
+    <section>
+        <div class="container_equipo">
+            <div>
+                <img src="./resource/img/LOGO ICODE v2 dorado.png" style="height: 100px;" alt="Descripción de la imagen 1">
+            </div>
+            <div style="text-align: center;">
+                <h2>Nuestro Equipo</h2>
+            </div>
+            <div>
+                <img src="./resource/img/LOGO ICODE v2 dorado.png" style="height: 100px;" alt="Descripción de la imagen 2">
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="./resource/img/candidatos/ALONZO.png" alt="Franklin Figueroa Pérez">
+                    <h3>Franklin Figueroa Pérez</h3>
+                    <p class="cargo">Presidente</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 2">
+                    <h3>Nombre Completo</h3>
+                    <p class="cargo">Vicepresidente</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 3">
+                    <h3>Nombre Completo</h3>
+                    <p class="cargo">Coordinador académico</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 4">
+                    <h3>Nombre Completo</h3>
+                    <p class="cargo">Coordinador de actas y acuerdos</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 5">
+                    <h3>Nombre Completo</h3>
+                    <p class="cargo">Coordinador de economía y desarrollo</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 6">
+                    <h3>Nombre Completo</h3>
+                    <p class="cargo">Coordinador de prensa y propaganda</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 7">
+                    <h3>Nombre Completo</h3>
+                    <p class="cargo">Coordinador de relaciones públicas</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 8">
+                    <h3>Nombre Completo</h3>
+                    <p class="cargo">Coordinador de deportes (1)</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 9">
+                    <h3>Nombre Completo</h3>
+                    <p class="cargo">Coordinador de deportes (2)</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 10">
+                    <h3>Nombre Completo</h3>
+                    <p class="cargo">Coordinador de eventos culturales</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 11">
+                    <h3>Nombre Completo</h3>
+                    <p class="cargo">Vocalía</p>
+                </div>
+                <!-- Repite este bloque para los 9 miembros restantes -->
+            </div>
+            <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
+            <div class="carousel-indicators">
+                <span class="indicator active" onclick="setSlide(0)"></span>
+                <span class="indicator" onclick="setSlide(1)"></span><span class="indicator" onclick="setSlide(2)"></span><span class="indicator" onclick="setSlide(3)"></span><span class="indicator" onclick="setSlide(4)"></span><span class="indicator" onclick="setSlide(5)"></span><span class="indicator" onclick="setSlide(6)"></span><span class="indicator" onclick="setSlide(7)"></span><span class="indicator" onclick="setSlide(8)"></span><span class="indicator" onclick="setSlide(9)"></span><span class="indicator" onclick="setSlide(10)"></span>
+                <!-- Agrega más indicadores según el número de elementos en el carrusel -->
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="proposal">
+            <h2>Propuesta 1: Sistema de Control de Asistencia</h2>
+            <p>Implementación de un sistema digital de control de asistencias basado en códigos QR.</p>
+            <button class="show-more" onclick="toggleContent(this)">Ver más</button>
+            <div class="proposal-content">
+                <h3>Justificación:</h3>
+                <p>Actualmente, las asistencias se registran manualmente en papel, lo cual es ineficiente para más de 500 estudiantes. Un sistema digital permitirá un registro rápido y fiable.</p>
+                <h3>Objetivos:</h3>
+                <ul>
+                    <li>Implementar un sistema digital de control de asistencias.</li>
+                    <li>Mejorar la transparencia y precisión en el seguimiento de la asistencia.</li>
+                </ul>
+                <h3>Metodología:</h3>
+                <ul>
+                    <li>Desarrollar una versión mejorada del sistema existente (versión 2.0).</li>
+                    <li>Iniciar la implementación durante el primer mes del año académico.</li>
+                </ul>
+                <!-- <img src="/api/placeholder/400/300" alt="Prototipo del sistema de asistencia"> -->
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://embed.figma.com/proto/0aneN6e8wWrL56r8ci5Zgt/UI-ASSISTANCE-IS?page-id=0%3A1&node-id=10-357&node-type=frame&viewport=1036%2C422%2C0.25&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A357&embed-host=share" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="proposal">
+            <h2>Propuesta 2: Sistema de Matrícula Digital para Laboratorios de la EPIS</h2>
+            <p>Desarrollo e implementación de un sistema de matrícula digital para los laboratorios.</p>
+            <button class="show-more" onclick="toggleContent(this)">Ver más</button>
+            <div class="proposal-content">
+                <h3>Justificación:</h3>
+                <p>El proceso actual de matrícula en hojas de Excel genera largas colas y es ineficiente. Un sistema digital optimizará la gestión de los laboratorios.</p>
+                <h3>Objetivo:</h3>
+                <p>Desarrollar e implementar un sistema de matrícula digital que permita a los estudiantes registrarse de forma rápida y sencilla para los laboratorios.</p>
+                <h3>Metodología:</h3>
+                <ul>
+                    <li>Implementar un sistema basado en un prototipo ya desarrollado en Figma.</li>
+                    <li>Finalizar la implementación en los primeros tres o cuatro meses del semestre académico.</li>
+                </ul>
+                <!-- <img src="/api/placeholder/400/300" alt="Prototipo del sistema de matrícula"> -->
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="500" src="https://embed.figma.com/proto/VGbBb9XSCjhLyYn9ONQ9Vs/SIMALAB-EPIS?page-id=0%3A1&node-id=1-2&node-type=frame&viewport=738%2C510%2C1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2&embed-host=share" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="proposal">
+            <h2>Propuesta 3: Sistema de Préstamo de Libros para la Biblioteca del CEIS</h2>
+            <p>Implementación de un sistema digital para el registro y control del préstamo de libros.</p>
+            <button class="show-more" onclick="toggleContent(this)">Ver más</button>
+            <div class="proposal-content">
+                <h3>Justificación:</h3>
+                <p>El préstamo de libros se gestiona actualmente en hojas de papel, lo cual es poco práctico y eficiente. Un sistema digital mejorará la eficiencia y facilitará el acceso a los recursos académicos.</p>
+                <h3>Objetivo:</h3>
+                <p>Implementar un sistema digital para el registro y control del préstamo de libros en la biblioteca del CEIS.</p>
+                <h3>Metodología:</h3>
+                <ul>
+                    <li>Desarrollar e implementar un sistema que digitalice el proceso de préstamo de libros.</li>
+                    <li>Implementación durante el primer mes del año académico.</li>
+                    <li>Uso de tecnología QR y tarjetas de identificación para registrar el préstamo y la devolución de libros.</li>
+                </ul>
+                <img src="./resource/img/prototipo biblioteca.png" alt="Sistema de préstamo de libros">
+            </div>
+        </section>
+
+        <section class="proposal">
+            <h2>Propuesta 4: Correo Institucional para el CEIS</h2>
+            <p>Implementación de un correo institucional para centralizar las comunicaciones y solicitudes.</p>
+            <button class="show-more" onclick="toggleContent(this)">Ver más</button>
+            <div class="proposal-content">
+                <h3>Justificación:</h3>
+                <p>Las comunicaciones actuales a través de WhatsApp dificultan el seguimiento y la formalización de las solicitudes. Un correo institucional garantizará una comunicación fluida y profesional.</p>
+                <h3>Objetivo:</h3>
+                <p>Implementar un correo institucional (con dominio ceis@unsch.edu.pe) para centralizar las comunicaciones y solicitudes de los estudiantes hacia el CEIS.</p>
+                <h3>Metodología:</h3>
+                <p>Realizar los trámites correspondientes para obtener el correo institucional durante la primera semana del período académico.</p>
+            </div>
+        </section>
+
+        <section class="proposal">
+            <h2>Propuesta 5: Sistema de Control Financiero para el CEIS</h2>
+            <p>Implementación de un sistema para gestionar la contabilidad del CEIS de manera digital.</p>
+            <button class="show-more" onclick="toggleContent(this)">Ver más</button>
+            <div class="proposal-content">
+                <h3>Justificación:</h3>
+                <p>La falta de un sistema eficiente para gestionar la contabilidad complica el control del presupuesto, los ingresos y los gastos. La digitalización garantizará una gestión más precisa y transparente.</p>
+                <h3>Objetivos:</h3>
+                <ul>
+                    <li>Implementar un sistema de control financiero para registrar y gestionar los ingresos y egresos del CEIS de manera digital.</li>
+                    <li>Facilitar la creación de informes financieros para la toma de decisiones estratégicas.</li>
+                </ul>
+                <h3>Metodología:</h3>
+                <ul>
+                    <li>Desarrollar un software para registrar las transacciones y generar reportes financieros automáticos.</li>
+                    <li>Realizar capacitaciones para la directiva y el tesorero sobre el uso del sistema.</li>
+                    <li>Implementar el sistema durante el segundo trimestre del año académico.</li>
+                </ul>
+                <img src="./resource/img/sist. financiero.png" alt="Sistema de control financiero">
+            </div>
+        </section>
+
+        <section class="proposal">
+            <h2>Propuesta 6: Sistema de Inventario para el CEIS</h2>
+            <p>Desarrollo de un sistema digital para gestionar el inventario del CEIS.</p>
+            <button class="show-more" onclick="toggleContent(this)">Ver más</button>
+            <div class="proposal-content">
+                <h3>Justificación:</h3>
+                <p>El inventario actual en hojas de papel facilita la pérdida de información y dificulta el control de responsabilidades. Un sistema digital permitirá un mejor control y mantenimiento de los recursos.</p>
+                <h3>Objetivo:</h3>
+                <p>Desarrollar un sistema digital para gestionar el inventario del CEIS, permitiendo un control más eficiente de los recursos y sus responsables.</p>
+                <h3>Metodología:</h3>
+                <ul>
+                    <li>Realizar un análisis de requerimientos y desarrollar el sistema durante cinco o seis meses.</li>
+                    <li>Si no es posible completar el sistema, dejar el proyecto en fase avanzada para la siguiente gestión.</li>
+                </ul>
+                <img src="./resource/img/SIS INVENTARIO.jpg" alt="Sistema de inventario">
+            </div>
+        </section>
+
+        <section class="proposal">
+            <h2>Propuesta 7: Elaboración de Poleras Americanas (estilo bomber) para la Carrera de Ingeniería de Sistemas</h2>
+            <p>Diseño y confección de poleras distintivas para los estudiantes de Ingeniería de Sistemas.</p>
+            <button class="show-more" onclick="toggleContent(this)">Ver más</button>
+            <div class="proposal-content">
+                <h3>Justificación:</h3>
+                <p>La carrera carece de un símbolo distintivo que refuerce el sentido de pertenencia. Las poleras tipo "Bomber" brindarán identidad y servirán como vestimenta adecuada para eventos académicos y deportivos.</p>
+                <h3>Objetivo:</h3>
+                <p>Diseñar y confeccionar poleras para los estudiantes de Ingeniería de Sistemas mediante un concurso de diseño participativo.</p>
+                <h3>Metodología:</h3>
+                <ol>
+                    <li>Realizar un concurso de diseño abierto a todos los estudiantes durante las dos primeras semanas del año académico.</li>
+                    <li>Votación virtual para elegir el diseño ganador durante la tercera semana.</li>
+                    <li>Cotización y confección de las poleras para los estudiantes interesados.</li>
+                </ol>
+                <img src="./resource/img/poleras.png" alt="Polera estilo bomber">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 I CODE - Centro de Estudiantes de Ingeniería de Sistemas (CEIS). Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
+
+        function moveCarousel(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * 100}%)`;
+            setSlide(currentSlide)
+        }
+        function setSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const slides = document.querySelectorAll('.carousel-item');
+            const indicators = document.querySelectorAll('.indicator');
+
+            // Mover el carrusel
+            document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Actualizar indicadores
+            indicators.forEach((indicator, idx) => {
+                indicator.classList.toggle('active', idx === currentSlide);
+            });
+        }
+
+        // Función para cambiar automáticamente las imágenes del carrusel
+        function autoChangeSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+            setTimeout(autoChangeSlide, 5000); // Cambia la imagen cada 5 segundos
+        }
+
+        autoChangeSlide();
+
+        function toggleContent(button) {
+            const content = button.nextElementSibling;
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                button.textContent = "Ver menos";
+            } else {
+                content.style.display = "none";
+                button.textContent = "Ver más";
+            }
+        }
+    </script>
+</body>
+</html>
