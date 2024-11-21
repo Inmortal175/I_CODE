@@ -2,13 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Inmortal175/I_CODE/refs/heads/Farmacia/resource/img/LOGO%20ICODE%20v2%20dorado.png" />
+    <meta name="author" content="Franklin, Figueroa Perez">
+    <title>Propuestas de I CODE</title>
+    <meta name="description" content="Propuestas de I code (EPIS UNSCH) para mejorar la experiencia estudiantil y la administración en el Centro de Estudiantes de Ingeniería de Sistemas (CEIS). ¡Descubre cómo podemos ayudarte!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="./resource/img/LOGO ICODE v2 dorado.png" type="image/x-icon">
-    <title>Propuestas I CODE</title>
+    <!-- metadata -->
+    <meta name="description" content="Las propuestas de I code (EPIS UNSCH) para mejorar la estancia de los estudiantes en la universidad y la administración del mismo." />
+    <meta property="og:title" content="Propuestas de I Code - EPIS" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://inmortal175.github.io/I_CODE/" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/Inmortal175/I_CODE/refs/heads/Farmacia/resource/img/LOGO%20ICODE%20v2%20dorado.png" />
+    <meta property="og:description" content="Propuestas de I code (EPIS UNSCH) para mejorar la experiencia estudiantil y la administración en el Centro de Estudiantes de Ingeniería de Sistemas (CEIS). ¡Descubre cómo podemos ayudarte!" />
     <style>
         .bonheur-royale-regular {
             font-family: "Bonheur Royale", cursive;
@@ -130,16 +140,32 @@
         .carousel-inner {
             display: flex;
             transition: transform 0.5s ease-in-out;
+            /*position: relative;*/
         }
+        /*.carousel-item {
+            min-width: 100%;
+            text-align: center;
+            
+        }*/
         .carousel-item {
             min-width: 100%;
             text-align: center;
-            height: 675px;
-            
+            height: 628px;
+            /*visibility: hidden;*/
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            z-index: -50;
+        }
+        .carousel-item.active {
+            /*visibility: visible;*/
+            opacity: 1;
+            position: static;
+            z-index: 0;
         }
         .carousel-item img {
             width: auto; /* Ajustado a 100% para responsividad */
-            height: 526px;
+            height: 473px;
             object-fit: cover;
             border-radius: 10px; /* Cambiado para un estilo más moderno */
             margin-bottom: 1em;
@@ -218,58 +244,58 @@
         <div class="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/ALONZO.png" alt="Franklin Figueroa Pérez">
+                    <img src="./resource/img/candidatos/FIGUEROA PEREZ, Franklin.png" alt="Franklin Figueroa Pérez">
                     <h3>Franklin Figueroa Pérez</h3>
                     <p class="cargo">Presidente</p>
                 </div>
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 2">
+                    <img src="./resource/img/candidatos/img1.png" alt="Miembro 2">
                     <h3>Nombre Completo</h3>
                     <p class="cargo">Vicepresidente</p>
                 </div>
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 3">
-                    <h3>Nombre Completo</h3>
+                    <img src="./resource/img/candidatos/img2.png" alt="Miembro 3">
+                    <h3>Orlando Paul, Nilupu Palomino</h3>
                     <p class="cargo">Coordinador académico</p>
                 </div>
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 4">
+                    <img src="./resource/img/candidatos/img1.png" alt="Miembro 4">
                     <h3>Nombre Completo</h3>
                     <p class="cargo">Coordinador de actas y acuerdos</p>
                 </div>
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 5">
+                    <img src="./resource/img/candidatos/img2.png" alt="Miembro 5">
                     <h3>Nombre Completo</h3>
                     <p class="cargo">Coordinador de economía y desarrollo</p>
                 </div>
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 6">
-                    <h3>Nombre Completo</h3>
+                    <img src="./resource/img/candidatos/img1.png" alt="Miembro 6">
+                    <h3>Roy Brayam, Gomez Prado</h3>
                     <p class="cargo">Coordinador de prensa y propaganda</p>
                 </div>
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 7">
-                    <h3>Nombre Completo</h3>
+                    <img src="./resource/img/candidatos/img2.png" alt="Miembro 7">
+                    <h3>Jhony Alberto, Sulca Mendoza</h3>
                     <p class="cargo">Coordinador de relaciones públicas</p>
                 </div>
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 8">
-                    <h3>Nombre Completo</h3>
+                    <img src="./resource/img/candidatos/img1.png" alt="Miembro 8">
+                    <h3>Angel Omar, Huamaní Gutierrez</h3>
                     <p class="cargo">Coordinador de deportes (1)</p>
                 </div>
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 9">
+                    <img src="./resource/img/candidatos/img2.png" alt="Miembro 9">
                     <h3>Nombre Completo</h3>
                     <p class="cargo">Coordinador de deportes (2)</p>
                 </div>
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 10">
-                    <h3>Nombre Completo</h3>
+                    <img src="./resource/img/candidatos/img1.png" alt="Miembro 10">
+                    <h3>Fredy Arturo, Bonilla Rey</h3>
                     <p class="cargo">Coordinador de eventos culturales</p>
                 </div>
                 <div class="carousel-item">
-                    <img src="./resource/img/candidatos/ALONZO.png" alt="Miembro 11">
-                    <h3>Nombre Completo</h3>
+                    <img src="./resource/img/candidatos/img2.png" alt="Miembro 11">
+                    <h3>Ana Gabriela, Rodrigo Cutipa</h3>
                     <p class="cargo">Vocalía</p>
                 </div>
                 <!-- Repite este bloque para los 9 miembros restantes -->
@@ -420,46 +446,42 @@
     </main>
 
     <footer>
-        <p>© 2024 I CODE - Centro de Estudiantes de Ingeniería de Sistemas (CEIS). Todos los derechos reservados.</p>
+        <p>© 2024 I CODE - Innovación, Creatividad, Orden y Desarrollo Estudiantil. Todos los derechos reservados.</p>
     </footer>
 
     <script>
-        let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-item');
         const totalSlides = slides.length;
+        let currentSlide = totalSlides - 1;
 
         function moveCarousel(direction) {
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-            document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * 100}%)`;
-            setSlide(currentSlide)
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+                slides[currentSlide].classList.add('active');
+                updateIndicators();
         }
+
         function setSlide(index) {
+            slides[currentSlide].classList.remove('active');
             currentSlide = index;
-            updateCarousel();
+            slides[currentSlide].classList.add('active');
+            updateIndicators();
         }
 
-        function updateCarousel() {
-            const slides = document.querySelectorAll('.carousel-item');
+        function updateIndicators() {
             const indicators = document.querySelectorAll('.indicator');
-
-            // Mover el carrusel
-            document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * 100}%)`;
-
-            // Actualizar indicadores
             indicators.forEach((indicator, idx) => {
                 indicator.classList.toggle('active', idx === currentSlide);
             });
         }
 
-        // Función para cambiar automáticamente las imágenes del carrusel
+        // Cambiar automáticamente las imágenes del carrusel
         function autoChangeSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
+            moveCarousel(1);
             setTimeout(autoChangeSlide, 5000); // Cambia la imagen cada 5 segundos
         }
 
         autoChangeSlide();
-
         function toggleContent(button) {
             const content = button.nextElementSibling;
             if (content.style.display === "none" || content.style.display === "") {
